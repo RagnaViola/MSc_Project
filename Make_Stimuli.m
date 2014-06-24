@@ -1,3 +1,5 @@
+% Top-level script for generating stimuli.
+
 orientations = linspace(0,175,36);
 frequencies = linspace(0, 20, 36);
 
