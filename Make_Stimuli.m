@@ -17,7 +17,7 @@ f_1=frequencies(f_index)
 figure(1)
 gaborIm = gaborFn(400, f_1, 50, o_1, 0, .005);
 imagesc(gaborIm, [-1 1]);
-axis image; axis off; colormap gray(256);
+axis image; axis off; colormap gray(1024);
 set(gca,'pos', [0 0 1 1]);
 set(gcf, 'menu', 'none', 'Color',[.5 .5 .5]);
 saveas(gcf,'Stimulus_1','png')
@@ -40,7 +40,7 @@ f_2=frequencies(f_index)
 figure(2)
 gaborIm = gaborFn(400, f_2, 50, o_2, 0, .005);
 imagesc(gaborIm, [-1 1]);
-axis image; axis off; colormap gray(256);
+axis image; axis off; colormap gray(1024);
 set(gca,'pos', [0 0 1 1]);
 set(gcf, 'menu', 'none', 'Color',[.5 .5 .5]);
 saveas(gcf, 'Stimulus_2', 'png')
@@ -63,7 +63,7 @@ f_3=frequencies(f_index)
 figure(3)
 gaborIm = gaborFn(400, f_3, 50, o_3, 0, .005);
 imagesc(gaborIm, [-1 1]);
-axis image; axis off; colormap gray(256);
+axis image; axis off; colormap gray(1024);
 set(gca,'pos', [0 0 1 1]);
 set(gcf, 'menu', 'none', 'Color',[.5 .5 .5]);
 saveas(gcf, 'Stimulus_3', 'png')
@@ -86,7 +86,7 @@ f_4=frequencies(f_index)
 figure(4)
 gaborIm = gaborFn(400, f_4, 50, o_4, 0, .005);
 h=imagesc(gaborIm, [-1 1]);
-axis image; axis off; colormap gray(256);
+axis image; axis off; colormap gray(1024);
 set(gca,'pos', [0 0 1 1]);
 set(gcf, 'menu', 'none', 'Color',[.5 .5 .5]);
 saveas(gcf,'Stimulus_4','png')
@@ -108,7 +108,7 @@ f_5=frequencies(f_index)
 figure(5)
 gaborIm = gaborFn(400, f_5, 50, o_5, 0, .005);
 imagesc(gaborIm, [-1 1]);
-axis image; axis off; colormap gray(256);
+axis image; axis off; colormap gray(1024);
 set(gca,'pos', [0 0 1 1]);
 set(gcf, 'menu', 'none', 'Color',[.5 .5 .5]);
 saveas(gcf,'Stimulus_5','png')
