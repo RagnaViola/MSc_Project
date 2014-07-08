@@ -1,0 +1,15 @@
+function [ stim_num ] = first_item( matrix )
+%FIRST_ITEM Determines the first item based on matrix
+%   returns index of stimulus e.g. 4
+
+probabilities=matrix(1,:) %just take the first row
+
+thresh=rand(1) %randomly choose a number between 0 and 1
+
+thresh_probabilities=cumsum(probabilities)      %bins
+
+list=thresh_probabilities>thresh %check in which bin this threshold falls
+
+stim_num=find(list,1) %returns index of stimulus
+
+end
