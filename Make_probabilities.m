@@ -1,9 +1,9 @@
-condition_1=[0.2185    0.1041    0.2407    0.1184    0.3183]
-condition_3=
-transitional_prob = drchrnd([2 2 2 2 2],5)
-condition_2_inter=bsxfun(@times,transitional_prob,condition_1)
-condition_2=condition_2_inter*2
+function [ Marginal, Transitional, Diff_Marginal ] = Make_probabilities( block )
+%UNTITLED2 make the probabilities
+%   at the moment it just goes through them in order
 
+%block=2
+count=block;
 
 relative_frequencies_1 = [[0.1255    0.1162    0.2767    0.2630    0.2187]
 [0.1109    0.1554    0.2888    0.1677    0.2772]
@@ -14,7 +14,7 @@ relative_frequencies_1 = [[0.1255    0.1162    0.2767    0.2630    0.2187]
 [0.1666    0.2728    0.2232    0.1314    0.2059]
 [0.1408    0.3656    0.1655    0.2166    0.1114]
 [0.1279    0.3744    0.1134    0.1910    0.1933]
-[0.1139    0.2664    0.1341    0.1273    0.3583]]
+[0.1139    0.2664    0.1341    0.1273    0.3583]];
 
 relative_frequencies_2 = [[0.1288    0.1863    0.1203    0.1972    0.3675]
 [0.3248    0.1429    0.1370    0.1354    0.2600]
@@ -25,4 +25,13 @@ relative_frequencies_2 = [[0.1288    0.1863    0.1203    0.1972    0.3675]
 [0.2324    0.2315    0.1726    0.1556    0.2079]
 [0.2006    0.1176    0.2672    0.1379    0.2767]
 [0.1881    0.1027    0.3489    0.2074    0.1529]
-[0.3340    0.1497    0.1461    0.2474    0.1228]]
+[0.3340    0.1497    0.1461    0.2474    0.1228]];
+
+Marginal_1=relative_frequencies_1(count,:);
+Marginal=[Marginal_1;Marginal_1;Marginal_1;Marginal_1;Marginal_1];
+Transitional=transitionFromMarginal(Marginal_1);
+Diff_Marginal_1=relative_frequencies_2(count,:);
+Diff_Marginal=[Diff_Marginal_1;Diff_Marginal_1;Diff_Marginal_1;Diff_Marginal_1;Diff_Marginal_1];
+
+
+end
