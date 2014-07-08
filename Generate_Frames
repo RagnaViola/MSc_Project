@@ -1,0 +1,30 @@
+% Overall script to generate the frames
+
+N=3;                         % number of total blocks
+blocks=linspace(1,N,N) ;     % list of total blocks for iteration and name generation purposes
+pos=[1 2 3];
+
+% iterate over the overall blocks and single bloks
+
+for block=blocks
+    [stimulus_1, stimulus_2, stimulus_3, stimulus_4, stimulus_5] = Make_Stimuli(); %generate the stimuli
+    [Marginal, Transitional, Diff_Marg] = Make_probabilities(block);
+    % now to the single frames
+
+           
+    %making the HABITUATION frames only once per block
+    long_habituation( Marginal, stimulus_1, stimulus_2, stimulus_3, stimulus_4, stimulus_5, block )
+    
+    %Making the short HABITUATION frames (2 per block)
+    %make this for point 2 and 3 also
+    %for sh=[1 2]
+    %    short_habituation( Marginal, stimulus_1, stimulus_2, stimulus_3, stimulus_4, stimulus_5, block, sh )
+    %end
+    
+    %making the frames
+    
+    condition_3( Marginal, Transitional, Diff_Marg, stimulus_1, stimulus_2, stimulus_3, stimulus_4, stimulus_5, block)
+    
+    
+end
+     
