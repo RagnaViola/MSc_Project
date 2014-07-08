@@ -1,0 +1,12 @@
+function [t] = transitionFromMarginal(m)
+
+q = ones(numel(m))/numel(m);
+rm = repmat(m,numel(m),1);
+pAcc = rm./rm';
+pRej = max(zeros(numel(m)),1-pAcc);
+
+qAcceptance = (1-pRej).*q;
+qRejection  = diag(sum(pRej.*q,2),0);
+
+t = qAcceptance+qRejection;
+end
